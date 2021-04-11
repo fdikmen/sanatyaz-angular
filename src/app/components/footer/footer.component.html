@@ -1,0 +1,41 @@
+<footer class="footer-modern-dark  padding-five-tb sm-padding-30px-tb" style="background-color: #0076bd;">
+    <div class="footer-widget-area padding-40px-bottom sm-padding-30px-bottom">
+        <div class="container">
+            <div *ngFor='let item of constant' class="row align-items-center">
+                <!-- start slogan -->
+                <div class="col-lg-4 text-center text-md-left md-margin-three-bottom sm-margin-20px-bottom">
+                    <h6 class="text-dark-gray width-70 lg-width-100 no-margin-bottom yazi" style="bottom: 0px;" [innerHtml]='item.text'></h6>
+                </div>
+                <!-- end slogan -->
+                <!-- start contact information -->
+                <div class="col-lg-4 col-md-6 text-center text-md-left sm-margin-20px-bottom">
+                    <span class="display-block yazi sm-width-100" style="width: 270px;">{{item.address}}</span>
+                    <a href="mailto:{{item.eMail}}" title="{{item.eMail}}" class="yazi" style="font-size: 13px;"><i class="far fa-envelope resim"></i> {{item.eMail}}</a><span class="mx-2">|</span><i class="fas fa-phone resim"></i><span class="yazi">  {{item.phone}} </span>  
+                </div>
+                <!-- end contact information -->
+                <!-- start social media -->
+                <div class="col-lg-4 col-md-6 social-style-2 text-center text-md-left">
+                    <a href="/"><img class="footer-logo" src="https://yonetim.sanatyaz.com/{{item.footerLogoUrl}}"  alt="Sanatyaz"></a>
+                    <div class="social-icon-style-8">
+                        <ul class="text-extra-small margin-20px-top sm-no-margin-bottom text-uppercase p-0 mb-0 list-unstyled">
+                            <li class="d-inline-block margin-10px-right "><a href="{{item.instagramUrl}}" class="yazi" target="_blank" title="Instagram"><img class="resim" src="/assets/images/instagram.png">  Instagram</a></li>
+                            <li class="d-inline-block margin-10px-right "><a href="{{item.youtubeUrl}}" class="yazi" target="_blank" title="Youtube"><img class="resim" src="/assets/images/youtube.png">  Youtube</a></li>
+                            <li class="d-inline-block margin-10px-right "><a href="{{item.facebookUrl}}" class="yazi" target="_blank" title="Facebook"><img class="resim" src="/assets/images/facebook.png">  Facebook</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- end social media -->
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-- start copyright -->
+        <div class="footer-bottom border-top border-color-medium-dark-white padding-40px-top sm-padding-30px-top">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-md-left text-center text-small text-light-gray">Sanat Yaz Eğitim Kurumları &copy; Tüm hakları mahfuzdur.</div>
+                <div class="col-md-6 text-md-right text-center text-small text-light-gray">&copy; 2020 by <a class="text-light-gray" href="http://www.toFlabs.com/" target="_blank" title="toFlabs">toFlabs</a></div>
+            </div>
+        </div>
+        <!-- end copyright -->
+    </div>
+</footer>

@@ -1,0 +1,38 @@
+<div class="space">
+
+</div>
+<section class="wow fadeIn p-0 main-slider mobile-height">
+    <carousel>        
+        <slide *ngFor="let item of sliders | orderby:'order'">
+            <div class="swiper-slide cover-background"
+                style="background-image:url('https://yonetim.sanatyaz.com//{{item.imageUrl}}');">
+                <div class="bg-extra-dark-gray"></div>
+                <div class="container position-relative one-fourth-screen sm-height-400px">
+                    <div class="slider-typography text-center">
+                        <div class="slider-text-middle-main">
+                            <div class="slider-text-middle">
+                                <span
+                                    class="text-large text-very-light-gray font-weight-300 width-95 mx-auto margin-25px-bottom d-block sm-margin-15px-bottom">{{item.sliderTitle}}</span>
+                                <h1
+                                    class="alt-font text-uppercase text-white-2 font-weight-700 width-75 sm-width-95 mx-auto margin-35px-bottom sm-margin-15px-bottom">
+                                    {{item.sliderSubtitle}}</h1>                                
+                                <div class="btn-dual" *ngIf="item.sliderUrl == null ; else link">
+                                    <a routerLink="/sliderDetail/{{item.id}}"
+                                        class="btn btn-white btn-rounded btn-medium sm-margin-two-all">DEVAMI</a>
+
+                                </div>
+                                <ng-template #link>
+                                    <div class="btn-dual">
+                                        <a href="{{item.sliderUrl}}"
+                                            class="btn btn-white btn-rounded btn-medium sm-margin-two-all">DEVAMI</a>
+    
+                                    </div>
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </slide>    
+    </carousel>
+</section>

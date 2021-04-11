@@ -1,0 +1,421 @@
+<section class="border-top border-color-extra-light-gray wow fadeIn">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div
+                class="col-12 col-xl-5 col-md-6 margin-eight-bottom md-margin-40px-bottom sm-margin-30px-bottom text-center">
+                <div class="alt-font text-medium-gray margin-5px-bottom text-uppercase text-small">Son Bloglar</div>
+                <h5 class="alt-font text-extra-dark-gray font-weight-600 mb-0">Faydalı Bilgiler</h5>
+            </div>
+        </div>
+
+        <!--pc display-->
+        <div class="row blog pc">
+            <div class="col-md-12">
+                <div id="blogCarousel" class="carousel slide" data-ride="carousel">
+                    <div class="row">
+                        <ol class="carousel-indicators mt-5" style="height: 30px;">
+                            <div *ngFor="let element of blogs; let i = index">
+
+                                <li *ngIf="element.isActive==true && element.getHomepage==true && i==0"
+                                    data-target="#blogCarousel" data-slide-to="0" active></li>
+
+                                <li *ngIf="element.isActive==true && element.getHomepage==true && i==4"
+                                    data-target="#blogCarousel" data-slide-to="1"></li>
+
+                                <li *ngIf="element.isActive==true && element.getHomepage==true && i==8"
+                                    data-target="#blogCarousel" data-slide-to="2"></li>
+
+                                <li *ngIf="element.isActive==true && element.getHomepage==true && i==12"
+                                    data-target="#blogCarousel" data-slide-to="3"></li>
+
+                                <li *ngIf="element.isActive==true && element.getHomepage==true && i==16"
+                                    data-target="#blogCarousel" data-slide-to="4"></li>
+                                    
+                                <li *ngIf="element.isActive==true && element.getHomepage==true && i==20"
+                                    data-target="#blogCarousel" data-slide-to="5"></li>
+                            </div>
+                        </ol>
+                    </div>
+                    <!-- Carousel items -->
+                    <div class="carousel-inner" style="margin-top:40px">
+                        <ng-template ngFor let-item [ngForOf]="blogs" let-i="index">
+
+
+                            <div class="carousel-item active"
+                                *ngIf="item.isActive==true && item.getHomepage==true && i == 0">
+                                <div class="row">
+                                    <ng-template ngFor let-item [ngForOf]="blogs" let-i="index">
+                                        <div *ngIf="item.isActive==true && item.getHomepage==true && i < 4"
+                                            class="col-12 col-lg-3 col-md-6 md-margin-50px-bottom sm-margin-30px-bottom last-paragraph-no-margin text-center text-md-left">
+                                            <div class="blog-post blog-post-style1">
+                                                <div class="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom "
+                                                    style=" height: 155px;">
+                                                    <a routerLink="/blogDetail/{{item.id}}" style=" height: 155px;">
+                                                        <img class="img-responsive img-fluid"
+                                                            src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt=""
+                                                            width="265px" height="155px">
+                                                    </a>
+                                                </div>
+                                                <div class="post-details">
+                                                    <span
+                                                        class="post-author text-extra-small text-medium-gray text-uppercase"
+                                                        style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{item.dateTime
+                                                        | date:'dd/MM/yy'}} | BY <a href="#"
+                                                            class="text-link-dark-gray">
+
+                                                            {{item.name}}
+
+                                                        </a></span>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="post-title text-medium text-extra-dark-gray width-90 sm-width-100 d-block">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                                            {{item.title}}
+                                                        </span>
+                                                    </a>
+                                                    <div
+                                                        class="separator-line-horrizontal-full bg-medium-light-gray margin-15px-tb">
+                                                    </div>
+                                                    <p class="width-90 sm-width-100">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
+                                                            {{item.subtitle}}
+                                                        </span>
+                                                    </p>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="btn btn-small btn-rounded btn-transparent-dark-gray mt-4">Devamını
+                                                        Oku
+                                                        <i class="fas fa-arrow-right"></i></a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </div>
+
+                            </div>
+
+                            <div class="carousel-item" *ngIf="item.isActive==true && item.getHomepage==true && i == 4">
+                                <div class="row">
+                                    <ng-template ngFor let-item [ngForOf]="blogs" let-i="index">
+                                        <div *ngIf="item.isActive==true && item.getHomepage==true && i >3 && i < 8"
+                                            class="col-12 col-lg-3 col-md-6 md-margin-50px-bottom sm-margin-30px-bottom last-paragraph-no-margin text-center text-md-left">
+                                            <div class="blog-post blog-post-style1">
+                                                <div class="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom "
+                                                    style=" height: 155px;">
+                                                    <a routerLink="/blogDetail/{{item.id}}" style=" height: 155px;">
+                                                        <img class="img-responsive img-fluid"
+                                                            src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt=""
+                                                            width="265px" height="155px">
+                                                    </a>
+                                                </div>
+                                                <div class="post-details">
+                                                    <span
+                                                        class="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom">{{item.dateTime
+                                                        | date:'dd/MM/yy'}} | by <a href="#"
+                                                            class="text-link-dark-gray">{{item.name}}</a></span>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="post-title text-medium text-extra-dark-gray width-90 sm-width-100 d-block">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                                            {{item.title}}
+                                                        </span>
+                                                    </a>
+                                                    <div
+                                                        class="separator-line-horrizontal-full bg-medium-light-gray margin-15px-tb">
+                                                    </div>
+                                                    <p class="width-90 sm-width-100">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
+                                                            {{item.subtitle}}
+                                                        </span>
+                                                    </p>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="btn btn-small btn-rounded btn-transparent-dark-gray mt-4">Devamını
+                                                        Oku
+                                                        <i class="fas fa-arrow-right"></i></a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </div>
+
+                            </div>
+
+                            <div class="carousel-item" *ngIf="item.isActive==true && item.getHomepage==true && i == 8">
+                                <div class="row">
+                                    <ng-template ngFor let-item [ngForOf]="blogs" let-i="index">
+                                        <div *ngIf=" item.isActive==true && item.getHomepage==true && i> 7 && i <12"
+                                            class="col-12 col-lg-3 col-md-6 md-margin-50px-bottom sm-margin-30px-bottom last-paragraph-no-margin text-center text-md-left wow fadeInUp">
+                                            <div class="blog-post blog-post-style1">
+                                                <div class="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom "
+                                                    style=" height: 155px;">
+                                                    <a routerLink="/blogDetail/{{item.id}}" style=" height: 155px;">
+                                                        <img class="img-responsive img-fluid"
+                                                            src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt=""
+                                                            width="265px" height="155px">
+                                                    </a>
+                                                </div>
+                                                <div class="post-details">
+                                                    <span
+                                                        class="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom">{{item.dateTime
+                                                        | date:'dd/MM/yy'}} | by <a href="#"
+                                                            class="text-link-dark-gray">{{item.name}}</a></span>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="post-title text-medium text-extra-dark-gray width-90 sm-width-100 d-block">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                                            {{item.title}}
+                                                        </span>
+                                                    </a>
+                                                    <div
+                                                        class="separator-line-horrizontal-full bg-medium-light-gray margin-15px-tb">
+                                                    </div>
+                                                    <p class="width-90 sm-width-100">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
+                                                            {{item.subtitle}}
+                                                        </span>
+                                                    </p>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="btn btn-small btn-rounded btn-transparent-dark-gray mt-4">Devamını
+                                                        Oku
+                                                        <i class="fas fa-arrow-right"></i></a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </div>
+
+                            </div>
+
+                            <div class="carousel-item "
+                                *ngIf="item.isActive==true && item.getHomepage==true && i == 12">
+                                <div class="row">
+                                    <ng-template ngFor let-item [ngForOf]="blogs" let-i="index">
+                                        <div *ngIf="item.isActive==true && item.getHomepage==true && i>11 &&i < 16"
+                                            class="col-12 col-lg-3 col-md-6 md-margin-50px-bottom sm-margin-30px-bottom last-paragraph-no-margin text-center text-md-left ">
+                                            <div class="blog-post blog-post-style1">
+                                                <div class="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom "
+                                                    style=" height: 155px;">
+                                                    <a routerLink="/blogDetail/{{item.id}}" style=" height: 155px;">
+                                                        <img class="img-responsive img-fluid"
+                                                            src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt=""
+                                                            width="265px" height="155px">
+                                                    </a>
+                                                </div>
+                                                <div class="post-details">
+                                                    <span
+                                                        class="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom">{{item.dateTime
+                                                        | date:'dd/MM/yy'}} | by <a href="#"
+                                                            class="text-link-dark-gray">{{item.name}}</a></span>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="post-title text-medium text-extra-dark-gray width-90 sm-width-100 d-block">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                                            {{item.title}}
+                                                        </span>
+                                                    </a>
+                                                    <div
+                                                        class="separator-line-horrizontal-full bg-medium-light-gray margin-15px-tb">
+                                                    </div>
+                                                    <p class="width-90 sm-width-100">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
+                                                            {{item.subtitle}}
+                                                        </span>
+                                                    </p>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="btn btn-small btn-rounded btn-transparent-dark-gray mt-4">Devamını
+                                                        Oku
+                                                        <i class="fas fa-arrow-right"></i></a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </div>
+
+                            </div>
+
+                            <div class="carousel-item "
+                                *ngIf="item.isActive==true && item.getHomepage==true && i == 16">
+                                <div class="row">
+                                    <ng-template ngFor let-item [ngForOf]="blogs" let-i="index">
+                                        <div *ngIf="item.isActive==true && item.getHomepage==true && i>15 &&i < 20"
+                                            class="col-12 col-lg-3 col-md-6 md-margin-50px-bottom sm-margin-30px-bottom last-paragraph-no-margin text-center text-md-left ">
+                                            <div class="blog-post blog-post-style1">
+                                                <div class="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom "
+                                                    style=" height: 155px;">
+                                                    <a routerLink="/blogDetail/{{item.id}}" style=" height: 155px;">
+                                                        <img class="img-responsive img-fluid"
+                                                            src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt=""
+                                                            width="265px" height="155px">
+                                                    </a>
+                                                </div>
+                                                <div class="post-details">
+                                                    <span
+                                                        class="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom">{{item.dateTime
+                                                        | date:'dd/MM/yy'}} | by <a href="#"
+                                                            class="text-link-dark-gray">{{item.name}}</a></span>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="post-title text-medium text-extra-dark-gray width-90 sm-width-100 d-block">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                                            {{item.title}}
+                                                        </span>
+                                                    </a>
+                                                    <div
+                                                        class="separator-line-horrizontal-full bg-medium-light-gray margin-15px-tb">
+                                                    </div>
+                                                    <p class="width-90 sm-width-100">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
+                                                            {{item.subtitle}}
+                                                        </span>
+                                                    </p>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="btn btn-small btn-rounded btn-transparent-dark-gray mt-4">Devamını
+                                                        Oku
+                                                        <i class="fas fa-arrow-right"></i></a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </div>
+
+                            </div>
+
+                            <div class="carousel-item "
+                                *ngIf="item.isActive==true && item.getHomepage==true && i == 20">
+                                <div class="row">
+                                    <ng-template ngFor let-item [ngForOf]="blogs" let-i="index">
+                                        <div *ngIf="item.isActive==true && item.getHomepage==true && i>19 &&i < 24"
+                                            class="col-12 col-lg-3 col-md-6 md-margin-50px-bottom sm-margin-30px-bottom last-paragraph-no-margin text-center text-md-left ">
+                                            <div class="blog-post blog-post-style1">
+                                                <div class="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom "
+                                                    style=" height: 155px;">
+                                                    <a routerLink="/blogDetail/{{item.id}}" style=" height: 155px;">
+                                                        <img class="img-responsive img-fluid"
+                                                            src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt=""
+                                                            width="265px" height="155px">
+                                                    </a>
+                                                </div>
+                                                <div class="post-details">
+                                                    <span
+                                                        class="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom">{{item.dateTime
+                                                        | date:'dd/MM/yy'}} | by <a href="#"
+                                                            class="text-link-dark-gray">{{item.name}}</a></span>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="post-title text-medium text-extra-dark-gray width-90 sm-width-100 d-block">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                                            {{item.title}}
+                                                        </span>
+                                                    </a>
+                                                    <div
+                                                        class="separator-line-horrizontal-full bg-medium-light-gray margin-15px-tb">
+                                                    </div>
+                                                    <p class="width-90 sm-width-100">
+                                                        <span
+                                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">
+                                                            {{item.subtitle}}
+                                                        </span>
+                                                    </p>
+                                                    <a routerLink="/blogDetail/{{item.id}}"
+                                                        class="btn btn-small btn-rounded btn-transparent-dark-gray mt-4">Devamını
+                                                        Oku
+                                                        <i class="fas fa-arrow-right"></i></a>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </ng-template>
+                                </div>
+
+                            </div>
+                        </ng-template>
+
+                    </div>
+                    <!--.carousel-inner-->
+                </div>
+                <!--.Carousel-->
+
+            </div>
+        </div>
+
+
+
+        <!--mobile display-->
+        <div class="row mobile">
+
+            <div class="col-md-12">
+                <carousel>
+                    <slide *ngFor="let item of blogs | orderby:'order'">
+
+
+                        <div class="swiper-slide text-center swiper-slide-next mb-5">
+
+
+
+                            <div
+                                class="col-12 col-lg-3 col-md-6 md-margin-50px-bottom sm-margin-30px-bottom last-paragraph-no-margin text-center text-md-left">
+                                <div class="blog-post blog-post-style1">
+                                    <div
+                                        class="blog-post-images overflow-hidden margin-25px-bottom md-margin-20px-bottom ">
+                                        <a routerLink="/blogDetail/{{item.id}}">
+                                            <img class="img-responsive img-fluid p-image"
+                                                src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="post-details">
+                                        <span class="post-author text-extra-small text-medium-gray text-uppercase"
+                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">{{item.dateTime
+                                            | date:'dd/MM/yy'}} | BY <a href="#" class="text-link-dark-gray">
+
+                                                {{item.name}}
+
+                                            </a></span>
+                                        <a routerLink="/blogDetail/{{item.id}}"
+                                            class="post-title text-medium text-extra-dark-gray width-90 sm-width-100 d-block">
+                                            <span
+                                                style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 1; -webkit-box-orient: vertical;">
+                                                {{item.title}}
+                                            </span>
+                                        </a>
+                                        <div
+                                            class="separator-line-horrizontal-full bg-medium-light-gray margin-15px-tb">
+                                        </div>
+                                        <p class="width-90 sm-width-100">
+                                            <span
+                                                style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+                                                {{item.subtitle}}
+                                            </span>
+                                        </p>
+                                        <a routerLink="/blogDetail/{{item.id}}"
+                                            class="btn btn-small btn-rounded btn-transparent-dark-gray mt-2">Devamını
+                                            Oku
+                                            <i class="fas fa-arrow-right"></i></a>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+
+                    </slide>
+                </carousel>
+            </div>
+
+        </div>
+
+
+    </div>
+</section>

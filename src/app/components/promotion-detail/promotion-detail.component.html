@@ -1,0 +1,32 @@
+<div class="space"></div>
+<section class="wow fadeIn bg-light-gray padding-35px-tb page-title-small">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-6 text-md-left text-center">
+                <!-- start page title -->
+                <h1 class="alt-font text-extra-dark-gray font-weight-600 mb-0 text-uppercase" >{{promotionDetail?.promotionTitle}}</h1>
+                <!-- end page title -->
+            </div>
+            <div
+                class="col-lg-4 col-md-6 breadcrumb text-small alt-font justify-content-center justify-content-md-end sm-margin-15px-top">
+                <!-- breadcrumb -->
+                <ul>
+                    <li><a href="/" class="text-dark-gray">Anasayfa</a></li>
+                    <li class="text-dark-gray">{{promotionDetail?.promotionTitle}}</li>
+                </ul>
+                <!-- end breadcrumb -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end page title section -->
+<!-- start blog content section -->
+<section class="wow fadeIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 last-paragraph-no-margin text-center text-md-left" >
+                <div [innerHTML]="promotionDetail?.promotionText"></div>
+            </div>            
+        </div>
+    </div>
+</section>

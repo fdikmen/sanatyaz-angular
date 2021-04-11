@@ -1,0 +1,17 @@
+<section class="p-0 wow fadeIn bg-extra-dark-gray" id="services">
+    <div class="container-fluid p-0">
+        <div *ngFor='let item of purpose' class="row">
+            <div class="col-12 col-lg-6 position-relative md-height-550px sm-height-350px cover-background wow slideInLeft" data-wow-duration="900ms" style="background-image: url('https://yonetim.sanatyaz.com/{{item.imageUrl}}')"></div>
+            <div style="background-color:#0076bd;" class="col-12 col-lg-6 padding-seven-tb padding-eight-lr md-padding-nine-tb md-padding-twelve-lr sm-padding-30px-tb sm-padding-50px-lr text-center text-lg-left wow slideInRight last-paragraph-no-margin" data-wow-duration="900ms">
+                <!-- <span class="text-medium margin-20px-bottom md-margin-15px-bottom d-block alt-font sm-margin-15px-bottom">We create premium designs and technology.</span> -->
+                <h4 class="alt-font text-dark-blue" style="color: white;">{{item.title}}</h4>
+                <p class="width-80 lg-width-100">
+                    <span style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 7; -webkit-box-orient: vertical; color:lightgray">
+                        {{item.text}}
+                    </span>
+                </p>
+                <a routerLink="/purposeDetail/{{item.id}}" class="btn btn-small btn-white btn-rounded margin-35px-top md-margin-25px-top">Devamını Oku</a>
+            </div>
+        </div>
+    </div>
+</section>

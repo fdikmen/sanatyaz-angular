@@ -1,0 +1,359 @@
+<!--pc display-->
+<div class="row blog pc">
+    <div class="col-md-12">
+        <div id="promotionCarousel" class="carousel slide" data-ride="carousel">
+            <div class="row">
+                <ol class="carousel-indicators mt-5" style="height: 30px;">
+                    <div *ngFor="let element of promotion; let i = index">
+
+                        <li *ngIf="element.isActive==true && element.getHomepage==true && i==0"
+                            data-target="#promotionCarousel" data-slide-to="0" class="active"></li>
+
+                        <li *ngIf="element.isActive==true && element.getHomepage==true && i==3"
+                            data-target="#promotionCarousel" data-slide-to="1"></li>
+
+                        <li *ngIf="element.isActive==true && element.getHomepage==true && i==6"
+                            data-target="#promotionCarousel" data-slide-to="2"></li>
+
+                        <li *ngIf="element.isActive==true && element.getHomepage==true && i==9"
+                            data-target="#promotionCarousel" data-slide-to="3"></li>
+
+                        <li *ngIf="element.isActive==true && element.getHomepage==true && i==12"
+                            data-target="#promotionCarousel" data-slide-to="4"></li>
+
+                        <li *ngIf="element.isActive==true && element.getHomepage==true && i==15"
+                            data-target="#promotionCarousel" data-slide-to="5"></li>
+                    </div>
+                </ol>
+            </div>
+            <!-- Carousel items -->
+            <div class="carousel-inner" style="margin-top:40px">
+                <ng-template ngFor let-item [ngForOf]="promotion" let-i="index">
+
+
+                    <div class="carousel-item active" *ngIf="item.isActive==true && item.getHomepage==true && i == 0">
+                        <div class="row">
+                            <ng-template ngFor let-item [ngForOf]="promotion" let-i="index">
+                                <div *ngIf="item.isActive==true && item.getHomepage==true && i < 3"
+                                    class="col-12 col-md-4 sm-margin-30px-bottom" data-wow-delay="0.2s">
+                                    <div class="bg-white text-center h-100">
+                                        <a routerLink="/promotiondetail/{{item.id}}">
+
+                                            <div *ngIf="item.mediaUrl !=null; else image"
+                                                class="embed-responsive embed-responsive-16by9">
+                                                <iframe class="embed-responsive-item" [src]="item.safeUrl"
+                                                    frameborder="0"
+                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                    allowfullscreen></iframe>
+                                            </div>
+
+                                            <ng-template #image>
+                                                <div *ngIf="item.imageUrl !=null">
+                                                    <img class="img-responsive img-fluid p-image"
+                                                        src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt="">
+                                                </div>
+                                            </ng-template>
+                                        </a>
+                                        <div class="padding-45px-all md-padding-15px-all">
+                                            <span
+                                                class="text-extra-dark-gray font-weight-600 d-block alt-font margin-10px-bottom">{{item.promotionTitle}}</span>
+                                            <p class="text-justify">
+                                                <span
+                                                    style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
+                                                    {{item.promotionSubtitle}}
+                                                </span>
+                                            </p>
+                                            <a routerLink="/promotiondetail/{{item.id}}"
+                                                class="btn btn-small btn-rounded btn-transparent-dark-gray">Devamını Oku
+                                                <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+
+                    </div>
+                    <!--.item-->
+
+                    <div class="carousel-item" *ngIf="item.isActive==true && item.getHomepage==true && i==3 ">
+                        <div class="row">
+                            <ng-template ngFor let-item [ngForOf]="promotion" let-i="index">
+                                <div *ngIf="item.isActive==true && item.getHomepage==true && i > 2 && i < 6"
+                                    class="col-12 col-md-4 sm-margin-30px-bottom">
+                                    <div class="bg-white text-center h-100">
+                                        <a routerLink="/promotiondetail/{{item.id}}">
+                                            <div *ngIf="item.imageUrl !=null; else frame">
+                                                <img class="img-responsive img-fluid p-image"
+                                                    src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt="">
+                                            </div>
+                                            <ng-template #frame>
+                                                <div class="embed-responsive embed-responsive-16by9">
+
+                                                    <iframe class="embed-responsive-item" [src]="item.safeUrl"
+                                                        frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen></iframe>
+
+                                                </div>
+                                            </ng-template>
+                                        </a>
+                                        <div class="padding-45px-all md-padding-15px-all">
+                                            <span
+                                                class="text-extra-dark-gray font-weight-600 d-block alt-font margin-10px-bottom">{{item.promotionTitle}}</span>
+                                            <p class="text-justify">
+                                                <span
+                                                    style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
+                                                    {{item.promotionSubtitle}}
+                                                </span>
+                                            </p>
+                                            <a routerLink="/promotiondetail/{{item.id}}"
+                                                class="btn btn-small btn-rounded btn-transparent-dark-gray">Devamını Oku
+                                                <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item" *ngIf="item.isActive==true && item.getHomepage==true && i == 6">
+                        <div class="row">
+                            <ng-template ngFor let-item [ngForOf]="promotion" let-i="index">
+                                <div *ngIf="item.isActive==true && item.getHomepage==true && i > 5 && i < 9"
+                                    class="col-12 col-md-4 sm-margin-30px-bottom">
+                                    <div class="bg-white text-center h-100">
+                                        <a routerLink="/promotiondetail/{{item.id}}">
+                                            <div *ngIf="item.imageUrl !=null; else frame">
+                                                <img class="img-responsive img-fluid p-image"
+                                                    src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt="">
+                                            </div>
+                                            <ng-template #frame>
+                                                <div class="embed-responsive embed-responsive-16by9">
+
+                                                    <iframe class="embed-responsive-item" [src]="item.safeUrl"
+                                                        frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen></iframe>
+
+                                                </div>
+                                            </ng-template>
+                                        </a>
+                                        <div class="padding-45px-all md-padding-15px-all">
+                                            <span
+                                                class="text-extra-dark-gray font-weight-600 d-block alt-font margin-10px-bottom">{{item.promotionTitle}}</span>
+                                            <p class="text-justify">
+                                                <span
+                                                    style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
+                                                    {{item.promotionSubtitle}}
+                                                </span>
+                                            </p>
+                                            <a routerLink="/promotiondetail/{{item.id}}"
+                                                class="btn btn-small btn-rounded btn-transparent-dark-gray">Devamını Oku
+                                                <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item" *ngIf="item.isActive==true && item.getHomepage==true && i == 9">
+                        <div class="row">
+                            <ng-template ngFor let-item [ngForOf]="promotion" let-i="index">
+                                <div *ngIf="item.isActive==true && item.getHomepage==true && i > 8 && i < 12"
+                                    class="col-12 col-md-4 sm-margin-30px-bottom">
+                                    <div class="bg-white text-center h-100">
+                                        <a routerLink="/promotiondetail/{{item.id}}">
+                                            <div *ngIf="item.imageUrl !=null; else frame">
+                                                <img class="img-responsive img-fluid p-image"
+                                                    src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt="">
+                                            </div>
+                                            <ng-template #frame>
+                                                <div class="embed-responsive embed-responsive-16by9">
+
+                                                    <iframe class="embed-responsive-item" [src]="item.safeUrl"
+                                                        frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen></iframe>
+
+                                                </div>
+                                            </ng-template>
+                                        </a>
+                                        <div class="padding-45px-all md-padding-15px-all">
+                                            <span
+                                                class="text-extra-dark-gray font-weight-600 d-block alt-font margin-10px-bottom">{{item.promotionTitle}}</span>
+                                            <p class="text-justify">
+                                                <span
+                                                    style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
+                                                    {{item.promotionSubtitle}}
+                                                </span>
+                                            </p>
+                                            <a routerLink="/promotiondetail/{{item.id}}"
+                                                class="btn btn-small btn-rounded btn-transparent-dark-gray">Devamını Oku
+                                                <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item" *ngIf="item.isActive==true && item.getHomepage==true && i == 12">
+                        <div class="row">
+                            <ng-template ngFor let-item [ngForOf]="promotion" let-i="index">
+                                <div *ngIf="item.isActive==true && item.getHomepage==true && i > 11 && i < 15"
+                                    class="col-12 col-md-4 sm-margin-30px-bottom">
+                                    <div class="bg-white text-center h-100">
+                                        <a routerLink="/promotiondetail/{{item.id}}">
+                                            <div *ngIf="item.imageUrl !=null; else frame">
+                                                <img class="img-responsive img-fluid p-image"
+                                                    src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt="">
+                                            </div>
+                                            <ng-template #frame>
+                                                <div class="embed-responsive embed-responsive-16by9">
+
+                                                    <iframe class="embed-responsive-item" [src]="item.safeUrl"
+                                                        frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen></iframe>
+
+                                                </div>
+                                            </ng-template>
+                                        </a>
+                                        <div class="padding-45px-all md-padding-15px-all">
+                                            <span
+                                                class="text-extra-dark-gray font-weight-600 d-block alt-font margin-10px-bottom">{{item.promotionTitle}}</span>
+                                            <p class="text-justify">
+                                                <span
+                                                    style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
+                                                    {{item.promotionSubtitle}}
+                                                </span>
+                                            </p>
+                                            <a routerLink="/promotiondetail/{{item.id}}"
+                                                class="btn btn-small btn-rounded btn-transparent-dark-gray">Devamını Oku
+                                                <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+
+                    </div>
+
+                    <div class="carousel-item" *ngIf="item.isActive==true && item.getHomepage==true && i == 15">
+                        <div class="row">
+                            <ng-template ngFor let-item [ngForOf]="promotion" let-i="index">
+                                <div *ngIf="item.isActive==true && item.getHomepage==true && i > 14 && i < 18"
+                                    class="col-12 col-md-4 sm-margin-30px-bottom">
+                                    <div class="bg-white text-center h-100">
+                                        <a routerLink="/promotiondetail/{{item.id}}">
+                                            <div *ngIf="item.imageUrl !=null; else frame">
+                                                <img class="img-responsive img-fluid p-image"
+                                                    src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt="">
+                                            </div>
+                                            <ng-template #frame>
+                                                <div class="embed-responsive embed-responsive-16by9">
+
+                                                    <iframe class="embed-responsive-item" [src]="item.safeUrl"
+                                                        frameborder="0"
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                        allowfullscreen></iframe>
+
+                                                </div>
+                                            </ng-template>
+                                        </a>
+                                        <div class="padding-45px-all md-padding-15px-all">
+                                            <span
+                                                class="text-extra-dark-gray font-weight-600 d-block alt-font margin-10px-bottom">{{item.promotionTitle}}</span>
+                                            <p class="text-justify">
+                                                <span
+                                                    style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
+                                                    {{item.promotionSubtitle}}
+                                                </span>
+                                            </p>
+                                            <a routerLink="/promotiondetail/{{item.id}}"
+                                                class="btn btn-small btn-rounded btn-transparent-dark-gray">Devamını Oku
+                                                <i class="fas fa-arrow-right"></i></a>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </ng-template>
+                        </div>
+
+                    </div>
+                </ng-template>
+
+            </div>
+            <!--.carousel-inner-->
+        </div>
+        <!--.Carousel-->
+
+    </div>
+</div>
+<!--mobile display-->
+
+
+<div class="row mobile">
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+        <carousel>
+            <ng-template ngFor let-item [ngForOf]="promotion" let-i="index">
+
+                <slide *ngIf="item.isActive==true && item.getHomepage==true">
+
+
+                    <div class="swiper-slide text-center swiper-slide-next">
+
+                        <div class="col-12 col-md-4 sm-margin-30px-bottom">
+                            <div class="bg-white text-center h-100">
+                                <a routerLink="/promotiondetail/{{item.id}}">
+                                    <div *ngIf="item.imageUrl !=null; else frame">
+                                        <img class="img-responsive img-fluid p-image"
+                                            src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt="">
+                                    </div>
+                                    <ng-template #frame>
+                                        <div class="embed-responsive embed-responsive-16by9 p-frame">
+
+                                            <iframe class="embed-responsive-item p-frame" [src]="item.safeUrl"
+                                                frameborder="0"
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                                allowfullscreen></iframe>
+
+                                        </div>
+                                    </ng-template>
+                                </a>
+                                <div class="padding-45px-all md-padding-15px-all">
+                                    <span
+                                        class="text-extra-dark-gray font-weight-600 d-block alt-font margin-10px-bottom">{{item.promotionTitle}}</span>
+                                    <p class="text-justify">
+                                        <span
+                                            style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">
+                                            {{item.promotionSubtitle}}
+                                        </span>
+                                    </p>
+                                    <a routerLink="/promotiondetail/{{item.id}}"
+                                        class="btn btn-small btn-rounded btn-transparent-dark-gray">Devamını Oku
+                                        <i class="fas fa-arrow-right"></i></a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </slide>
+            </ng-template>
+        </carousel>
+    </div>
+    <div class="col-md-4"></div>
+</div>

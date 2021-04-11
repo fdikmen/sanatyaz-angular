@@ -1,0 +1,117 @@
+<div class="space"></div>
+<section class="wow fadeIn bg-light-gray padding-35px-tb page-title-small">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8 col-md-6 text-md-left text-center">
+                <!-- start page title -->
+                <h1 class="alt-font text-extra-dark-gray font-weight-600 mb-0 text-uppercase">Form</h1>
+                <!-- end page title -->
+            </div>
+            <div
+                class="col-lg-4 col-md-6 breadcrumb text-small alt-font justify-content-center justify-content-md-end sm-margin-15px-top">
+                <!-- breadcrumb -->
+                <ul>
+                    <li><a href="/" class="text-dark-gray">Anasayfa</a></li>
+                    <li class="text-dark-gray">Form</li>
+                </ul>
+                <!-- end breadcrumb -->
+            </div>
+        </div>
+    </div>
+</section>
+<div *ngFor="let form of forms">
+    <div *ngIf="form.isActive">
+        <section>
+
+
+            <div class="container" [innerHTML]="form.safeUrl"></div>
+
+
+
+
+        </section>
+        <div class="container-fluid  bg-extra-light-gray">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div
+                    class="col-lg-6 text-center padding-six-lr padding-five-half-tb md-padding-ten-half-tb md-padding-twelve-half-lr sm-padding-15px-lr wow fadeIn">
+                    <div class="text-medium-gray alt-font text-small margin-5px-bottom sm-margin-three-bottom">
+                        {{form.title}}
+                        formu doldurun, hemen sizinle iletişime geçelim!</div>
+                    <h5
+                        class="margin-55px-bottom text-white-2 alt-font font-weight-700 text-uppercase sm-margin-ten-bottom">
+                        {{form.title}}</h5>
+
+                    <!-- method="post" -->
+                    <form [formGroup]="contactAddForm" (ngSubmit)="addFormArchive()">
+                        <div class="row">
+
+                            <div *ngFor="let item of formElement | orderby:'order'" class="col-12 col-lg-12">
+                                
+                                <div *ngIf="item.type=='Input' && form.id==item.formId">
+                                    <input name="{{item.text}}" id="item.text" type="text" placeholder="{{item.text}}"
+                                        formControlName="{{item.text}}" id="{{item.id}}" class="bg-white medium-input">
+                                </div>
+                                <div *ngIf="item.type=='Textarea' && form.id==item.formId">
+                                    <textarea placeholder="{{item.text}}" rows="7" formControlName="{{item.text}}"
+                                        class="bg-white medium-textarea"></textarea>
+
+                                </div>
+
+                                <div *ngIf="item.type=='RadioButton' && form.id==item.formId"
+                                    class="col-12 col-lg-12 mt-3">
+
+
+                                    <div class="row">
+                                        <div class="col-md-1 col-sm-1 col-xs-1">
+                                            <input class="form-check-input w-25" type="checkbox"
+                                                formControlName="{{item.text}}" value="" id="defaultCheck1">
+
+                                        </div>
+                                        <div class="col-md-11 col-sm-2 col-xs-2 pl-0 pr-0">
+                                            <label class="form-check-label float-left" for="defaultCheck1">
+                                                {{item.text}}
+                                            </label>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+                                <div *ngIf="item.type=='Dropdown' && form.id==item.formId" class="mb-3">
+                                    <div
+                                        class="select-style bg-transparent border-color-medium-dark-gray medium-select">
+                                        <select name="budget" id="budget" class="bg-white mb-0"
+                                            style="border:1px solid gray;">
+                                            <option style="font-size: 14px; ">
+                                                  {{item.text}} seçiniz                                             
+                                            </option>
+                                            <ng-template ngFor let-formelement [ngForOf]="formElementItem" let-i="index">
+                                            
+                                            <option *ngIf="item.id==formelement.formElementId"
+                                                formControlName="{{item.text}}" style="font-size: 14px; ">
+                                                {{formelement.text}}                                                
+                                            </option>
+                                            </ng-template>
+                                        </select>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                            <div class="col-12 text-center">
+                                <button type="submit"
+                                    class="btn btn-deep-pink btn-medium margin-15px-top">GÖNDER</button>
+                            </div>
+
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

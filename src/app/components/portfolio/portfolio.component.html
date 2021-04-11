@@ -1,0 +1,115 @@
+<!-- start portfolio section -->
+<section class="pb-0 padding-80px-top md-padding-50px-top sm-padding-30px-top wow fadeIn">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <!-- start filter navigation -->
+                <ul
+                    class="portfolio-filter nav nav-tabs justify-content-center border-none portfolio-filter-tab-1 alt-font text-uppercase text-center text-small font-weight-600 margin-80px-bottom md-margin-40px-bottom sm-margin-20px-bottom">
+
+                    <li *ngFor="let item of homepage | orderby:'order'" class="nav">
+                        <a href="javascript:void(0);" data-filter=""
+                            class="sm-display-inline light-gray-text-link text-very-small">{{item.menuName}}</a>
+                    </li>
+
+
+                </ul>
+                <!-- end filter navigation -->
+            </div>
+        </div>
+    </div>
+    <!--pc display-->
+    <div class="container-fluid no-padding pc">
+        <div class="row no-margin">
+            <div class="filter-content overflow-hidden w-100">
+                <ul  class="portfolio-grid work-3col hover-option4">
+
+                    <li class="grid-sizer"></li>
+                    <!-- start portfolio  item -->
+
+                    <li *ngFor="let item of homepage" class="grid-item  wow fadeInUp">
+                        <a routerLink="/menuDetail/{{item.id}}">
+                            <figure>
+                                <div class="portfolio-img bg-extra-dark-gray" style="height: 350px;"><img
+                                        src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" style="height: 350px;"
+                                        alt="" /></div>
+                                <figcaption>
+                                    <div class="portfolio-hover-main text-center">
+                                        <div class="portfolio-hover-box vertical-align-middle">
+                                            <div
+                                                class="portfolio-hover-content position-relative last-paragraph-no-margin">
+                                                <div
+                                                    class="bg-deep-pink mx-auto separator-line-horrizontal-medium-light3 margin-25px-bottom">
+                                                </div>
+                                                <span
+                                                    class="letter-spacing-1 font-weight-600 line-height-normal alt-font text-white-2 text-uppercase margin-5px-bottom display-block">{{item.menuName}}</span>
+                                                <p
+                                                    class="text-medium-gray letter-spacing-1 text-uppercase text-extra-small">
+                                                    Sanat Yaz Eğitim</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </figcaption>
+                            </figure>
+                        </a>
+                    </li>
+
+                    <!-- end portfolio item -->
+
+                </ul>
+
+            </div>
+        </div>
+    </div>
+
+    <!--mobile display-->
+    <div class="row mobile">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <carousel>
+                <div class="swiper-slide text-center swiper-slide-next red-text bg-extra-light-gray">
+
+                    <ul *ngFor="let item of homepage" class="portfolio-grid work-3col hover-option4">
+
+                        <li class="grid-sizer"></li>
+                        <!-- start portfolio  item -->
+                        <slide *ngFor="let item of homepage">
+                            <li class="grid-item">
+                                <a routerLink="/menuDetail/{{item.id}}">
+                                    <figure>
+                                        <div class="portfolio-img bg-extra-dark-gray" style="height: 350px;"><img
+                                                src="https://yonetim.sanatyaz.com/{{item.imageUrl}}"
+                                                style="height: 350px;" alt="" /></div>
+                                        <figcaption>
+                                            <div class="portfolio-hover-main text-center">
+                                                <div class="portfolio-hover-box vertical-align-middle">
+                                                    <div
+                                                        class="portfolio-hover-content position-relative last-paragraph-no-margin">
+                                                        <div
+                                                            class="bg-deep-pink mx-auto separator-line-horrizontal-medium-light3 margin-25px-bottom">
+                                                        </div>
+                                                        <span
+                                                            class="letter-spacing-1 font-weight-600 line-height-normal alt-font text-white-2 text-uppercase margin-5px-bottom display-block">{{item.menuName}}</span>
+                                                        <p
+                                                            class="text-medium-gray letter-spacing-1 text-uppercase text-extra-small">
+                                                            Sanat Yaz Eğitim</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        </slide>
+                        <!-- end portfolio item -->
+
+                    </ul>
+                </div>
+
+
+            </carousel>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</section>
+<!-- end portfolio section -->

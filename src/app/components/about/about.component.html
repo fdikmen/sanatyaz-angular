@@ -1,0 +1,123 @@
+<div class="space"></div>
+<!-- start page title section -->
+<section class="wow fadeIn bg-light-gray padding-35px-tb page-title-small">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-xl-8 col-md-6 text-center text-md-left">
+                <!-- start page title -->
+                <h1 class="alt-font text-extra-dark-gray font-weight-600 mb-0 text-uppercase">HAKKIMIZDA</h1>
+                <!-- end page title -->
+            </div>
+            <div class="col-xl-4 col-md-6 alt-font breadcrumb justify-content-center justify-content-md-end text-small sm-margin-10px-top">
+                <!-- start breadcrumb -->
+                <ul>
+                    <li><a href="/" class="text-dark-gray">Anasayfa</a></li>
+                    <li class="text-dark-gray">Hakkımızda</li>
+                </ul>
+                <!-- end breadcrumb -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end page title section -->
+
+<!-- start section -->
+<section class="p-0 bg-light-gray wow fadeIn">
+    <div class="container">
+        <div *ngFor="let item of abouts" class="row align-items-center">
+            <div *ngIf="item.id==1 && item.isActive==true" class="col-12 col-lg-5 order-1 order-lg-2 text-center text-lg-left offset-lg-1 md-padding-50px-all sm-padding-15px-lr">
+                <i class="fas fa-quote-left text-deep-pink icon-medium margin-15px-bottom"></i>
+                <h5 class="text-extra-dark-gray alt-font text-uppercase font-weight-700">{{item.title}}</h5>
+                <p class="width-90 md-width-100 text-justify"[innerHTML]="item.text"></p>
+                <!-- <img src="/assets/images/signature-dark.png" alt="" class="margin-15px-top"> -->
+                <!-- <span class="text-extra-dark-gray text-large d-block margin-30px-top alt-font font-weight-600">Lamia TAŞKIN</span>
+                <span class="d-block">Kurum Yöneticisi</span> -->
+            </div>
+            <div *ngIf="item.id==1 && item.isActive==true" class="col-12 col-lg-6 order-2 order-lg-1 text-center align-self-end">
+                <img src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+
+<section class="p-0 wow fadeIn bg-extra-dark-gray" style="visibility: visible; animation-name: fadeIn;">
+    <div class="container-fluid p-0">
+        <div class="row m-0">
+            <div class="col-12 col-lg-6 position-relative md-height-550px sm-height-350px cover-background wow slideInLeft" data-wow-duration="900ms" style="background-image: url(&quot;/assets/images/blog-details-img16.jpg&quot;); visibility: visible; animation-duration: 900ms; animation-name: slideInLeft;">
+            </div>
+            <div *ngFor="let purpose of purpose" class="col-12 col-lg-6 last-paragraph-no-margin padding-eight-lr padding-seven-tb md-padding-twelve-lr md-padding-ten-tb sm-padding-15px-lr text-center text-lg-left wow slideInRight" data-wow-duration="900ms" style="visibility: visible; animation-duration: 900ms; animation-name: slideInRight;">
+                <h5 class="alt-font text-light-gray"><strong>{{purpose.title}}</strong></h5>
+                <p class="text-center text-md-justify"><strong class="text-medium-gray text-decoration-underline">Amacımız,çocuklarımızın ;</strong><br/></p>
+                <p [innerHTML]="purpose.text"></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- start section -->
+<section class="wow fadeIn">
+    <div class="container">
+        <div *ngFor="let item2 of abouts" class="row">
+            <div *ngIf="item2.id==2 && item2.isActive==true" class="col-12 col-lg-4 text-center text-lg-left md-margin-30px-bottom md-padding-80px-lr sm-padding-15px-lr wow fadeIn">
+                <h5 class="alt-font font-weight-700 text-extra-dark-gray text-uppercase width-80 lg-width-100">{{item2.title}}</h5>
+                <div class="separator-line-verticle-extra-small bg-extra-dark-gray width-50 md-width-70 mx-auto ml-lg-0 margin-30px-bottom md-margin-20px-bottom"></div>
+                <p class="width-95 lg-width-100 text-justify" [innerHTML]="item2.text"></p>
+                
+            </div>
+            <div *ngIf="item2.id==2 && item2.isActive==true" class="col-12 col-lg-4 col-md-6 sm-margin-15px-bottom wow fadeIn" data-wow-delay="0.2s">
+                <img src="/assets/images/about-img6.jpg" class="w-100 " style="height: 300px;" alt=""/>
+            </div>
+            <div *ngIf="item2.id==2 && item2.isActive==true" class="col-12 col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.4s">
+                <img src="/assets/images/about-img5.jpg" class="w-100 " style="height: 300px;" alt=""/>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- start section -->
+<section class="wow fadeIn">
+    <div class="container">
+        <div *ngFor="let item3 of abouts" class="row">
+            <div *ngIf="item3.id==3 && item3.isActive==true" class="col-12 col-lg-4 col-md-6 sm-margin-15px-bottom wow fadeIn" data-wow-delay="0.2s">
+                <img src="/assets/images/about-img61.jpg" class="w-100" style="height: 300px;" alt=""/>
+            </div>
+            <div *ngIf="item3.id==3 && item3.isActive==true" class="col-12 col-lg-4 col-md-6 wow fadeIn" data-wow-delay="0.4s">
+                <img src="/assets/images/about-img51.jpg" class="w-100 " style="height: 300px;" alt=""/>
+            </div>
+            
+            <div *ngIf="item3.id==3 && item3.isActive==true" class="col-12 col-lg-4 text-center text-lg-left md-margin-30px-bottom md-padding-80px-lr sm-padding-15px-lr wow fadeIn">
+                <h5 class="alt-font font-weight-700 text-extra-dark-gray text-uppercase width-80 lg-width-100">{{item3.title}}</h5>
+                <div class="separator-line-verticle-extra-small bg-extra-dark-gray width-50 md-width-70 mx-auto ml-lg-0 margin-30px-bottom md-margin-20px-bottom"></div>
+                <p class="width-95 lg-width-100 text-justify" [innerHTML]="item3.text"></p>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end section -->
+<!-- start parallax section -->
+<div *ngFor="let item of abouts">
+    <section *ngIf="item.id==4"> 
+        
+        <section class="wow fadeIn p-0 parallax one-fourth-screen lg-height-600px md-height-500px sm-height-250px xs-height-150px background-position-x-50" data-stellar-background-ratio="0.5" style="background-image: url('https://yonetim.sanatyaz.com/{{item.imageUrl}}');">
+        </section>
+
+    </section>
+</div>
+
+
+<!-- end parallax section -->
+<div class="space"></div>
+<!-- start call to action section -->
+<section class="wow fadeIn">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-8 col-md-10 text-center">
+                <h5 class="alt-font text-uppercase font-weight-700 text-extra-dark-gray width-80 mx-auto margin-35px-bottom lg-width-100 wow fadeInUp">BİLGİ ALMAK İÇİN LÜTFEN BİZE YAZINIZ</h5>
+                <a href="mailto:info@sanatyaz.com?subject=Sisteminiz İçin Bir Öneri/Talebim var. (sanatyaz.com)" class="btn btn-medium btn-rounded btn-transparent-dark-gray wow fadeInUp"  data-wow-delay="0.2s">BİLGİ AL</a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- end call to action section -->  
+<!--PAGE CONTENT END-->

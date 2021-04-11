@@ -1,0 +1,80 @@
+<section class="wow fadeIn">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-xl-5 col-md-6 margin-eight-bottom md-margin-40px-bottom sm-margin-30px-bottom text-center">
+                <div class="alt-font text-medium-gray margin-5px-bottom text-uppercase text-small">GELECEĞİ İNŞA EDEN</div>
+                <h5 class="alt-font text-extra-dark-gray font-weight-600 mb-0">UZMAN KADROMUZ</h5>
+            </div>
+        </div>
+        <!-- pc display -->
+        <div class="pc">
+        <div class="row ">
+            
+            <div *ngFor="let item of personels | orderby:'order'" class="col-12 col-lg-3 col-md-6  mb-1 mb-md-5  team-block text-left team-style-1 md-margin-seven-bottom sm-margin-40px-bottom wow fadeInRight">
+                <figure *ngIf="item.isActive==true">
+                    <div  class="team-image sm-width-100">
+                        <img src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt=""> 
+                        <div class="overlay-content text-center d-flex align-items-end justify-content-center">
+                            <div class="icon-social-small padding-twelve-all">
+                                <span class="text-white-2 text-small d-inline-block m-0">{{item.name}}<br> {{item.job}}</span>
+                                <div class="separator-line-horrizontal-full bg-deep-pink margin-eleven-tb"></div>
+                                <a href="{{item.facebookUrl}}" target="_blank" class="text-white-2"><i class="fab fa-facebook-f"></i></a>
+                                <a href="{{item.twitterUrl}}" target="_blank" class="text-white-2"><i class="fab fa-twitter"></i></a>
+                                <a href="{{item.mailUrl}}" target="_blank" class="text-white-2"><i class="fab fa-google-plus-g"></i></a>
+                                <a href="{{item.instagramUrl}}" target="_blank" class="text-white-2"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                        <div class="team-overlay bg-extra-dark-gray opacity8"></div>
+                    </div>
+                    <figcaption>
+                        <div class="team-member-position margin-20px-top text-center">
+                            <div class="text-small font-weight-500 text-extra-dark-gray text-uppercase">{{item.name}}</div>
+                            <div class="text-extra-small text-uppercase text-medium-gray">{{item.job}}</div>
+                        </div>   
+                    </figcaption>
+                </figure>
+            </div>
+            
+            
+        </div>   
+    </div>
+        <!-- mobile display -->
+        <div class="row mobile">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <carousel>
+                    <slide *ngFor="let item of personels | orderby:'order'">
+
+                        <div class="col-12 col-lg-3 col-md-6  mb-1 mb-md-5  team-block text-left team-style-1 md-margin-seven-bottom sm-margin-40px-bottom">
+                            <figure *ngIf="item.isActive==true">
+                                <div  class="team-image sm-width-100">
+                                    <img src="https://yonetim.sanatyaz.com/{{item.imageUrl}}" alt=""> 
+                                    <div class="overlay-content text-center d-flex align-items-end justify-content-center">
+                                        <div class="icon-social-small padding-twelve-all">
+                                            <span class="text-white-2 text-small d-inline-block m-0">{{item.name}}<br> {{item.job}}</span>
+                                            <div class="separator-line-horrizontal-full bg-deep-pink margin-eleven-tb"></div>
+                                            <a href="{{item.facebookUrl}}" target="_blank" class="text-white-2"><i class="fab fa-facebook-f"></i></a>
+                                            <a href="{{item.twitterUrl}}" target="_blank" class="text-white-2"><i class="fab fa-twitter"></i></a>
+                                            <a href="{{item.mailUrl}}" target="_blank" class="text-white-2"><i class="fab fa-google-plus-g"></i></a>
+                                            <a href="{{item.instagramUrl}}" target="_blank" class="text-white-2"><i class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                    <div class="team-overlay bg-extra-dark-gray opacity8"></div>
+                                </div>
+                                <figcaption>
+                                    <div class="team-member-position margin-20px-top text-center">
+                                        <div class="text-small font-weight-500 text-extra-dark-gray text-uppercase">{{item.name}}</div>
+                                        <div class="text-extra-small text-uppercase text-medium-gray">{{item.job}}</div>
+                                    </div>   
+                                </figcaption>
+                            </figure>
+                        </div>
+                        
+
+                    </slide>
+                </carousel>
+            </div>
+            <div class="col-md-4"></div>
+        </div>           
+    </div>
+</section>

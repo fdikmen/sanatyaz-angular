@@ -1,0 +1,30 @@
+
+
+
+<div id="modalNesne" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      </div>
+      <ng-template ngFor let-item [ngForOf]="popups" let-i="index">
+
+        <div *ngIf="item.isActive==true" class="modal-body">
+          <div class="col-md-2"></div>
+          <div class="col-md-8">
+            <h6 class="modal-title">{{item.title}} </h6>
+          </div>
+          <div class="col-md-2"></div>
+
+          <div class="col-md-12">
+            <div [innerHTML]="item.safeContent"></div>
+
+          </div>
+        </div>
+      </ng-template>
+
+
+    </div>
+  </div>
+</div>
+

@@ -1,0 +1,171 @@
+<!-- start header -->
+<header class="header-with-topbar">
+    <!-- topbar -->
+    <div class="top-header-area padding-10px-tb"
+        style="background:linear-gradient(to right, #FED700, #CE1D76); height: 36px;">
+        <div class="container line-height-normal">
+            <div *ngFor='let item of constant' class="row align-items-center">
+                <div class="navigation-left">
+                    <a href="tel:{{item.phone}}" class="text-link-white-2 line-height-normal yazi"
+                        title="Tel:{{item.phone}}"><i class="fas fa-phone resim"></i> {{item.phone}}</a>
+                    <div
+                        class="separator-line-verticle-extra-small bg-dark-gray display-inline-block margin-two-half-lr position-relative vertical-align-middle">
+                    </div>
+                    <a href="mailto:{{item.eMail}}" class="text-link-white-2 line-height-normal yazi"
+                        title="{{item.eMail}}"><i class="far fa-envelope resim"></i> {{item.eMail}}</a>
+                </div>
+                <div class="navigation-right">
+                    <div class="icon-social-very-small display-inline-block line-height-normal deneme">
+                        <a href="{{item.instagramUrl}}" title="Instagram" target="_blank" class="text-link-white-2"><i
+                                class="fab fa-instagram resim"></i></a>
+                        <a href="{{item.youtubeUrl}}" title="Youtube" target="_blank" class="text-link-white-2 "><i
+                                class="fab fa-youtube resim"></i></a>
+                        <a href="{{item.facebookUrl}}" title="Facebook" target="_blank" class="text-link-white-2 "><i
+                                class="fab fa-facebook-f resim" aria-hidden="true"></i></a>
+                    </div>
+                    <div
+                        class="separator-line-verticle-extra-small bg-dark-gray display-inline-block margin-two-half-lr position-relative vertical-align-middle top-1px cizgi">
+                    </div>
+                    <div class="btn-group dropdown-style-1 language-pc">
+                        <button type="button" class="btn dropdown-toggle yazi" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Türkçe <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="right: 0px;">
+                            <li><a href="#" title="Türkçe"><img src="/assets/images/united-kingdom.png"
+                                        style="width: 20px; height: 15px;" /> English</a></li>
+                            <li><a href="#" title="English"><img src="/assets/images/turkey.png"
+                                        style="width: 20px; height: 15px;" /> Türkçe</a></li>
+                        </ul>
+
+                    </div>
+                    <div class="btn-group dropdown-style-1 language-mobile">
+                        <button type="button" class="btn dropdown-toggle yazi" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <img src="/assets/images/turkey.png" style="width: 15px; height: 15px;" /><span
+                                class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" style="right: 0px;">
+                            <li><a href="#" title="Türkçe"><img src="/assets/images/united-kingdom.png"
+                                        style="width: 20px; height: 15px;" /> English</a></li>
+                            <li><a href="#" title="English"><img src="/assets/images/turkey.png"
+                                        style="width: 20px; height: 15px;" /> Türkçe</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end topbar -->
+    <!-- start navigation -->
+    <nav
+        class="navbar navbar-default bootsnav navbar-top header-light-transparent background-transparent nav-box-width navbar-expand-lg">
+        <div class="container nav-header-container">
+            <!-- start logo -->
+            <div *ngFor='let item of constant' class="col-auto pl-lg-0" style="height: 60px;">
+                <a href="/" title="Sanat Yaz" style="height: 60px;"><img style="height: 60px;"
+                        src="https://yonetim.sanatyaz.com/{{item.logoUrl}}" class="logo-dark default" alt="Pofo"></a>
+            </div>
+
+            <div class="col accordion-menu pr-0 pr-md-3">
+                <button type="button" class="navbar-toggler collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse-toggle-1">
+                    <span class="sr-only">toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <div class="navbar-collapse collapse justify-content-end" id="navbar-collapse-toggle-1">
+
+                    <ul class="menu">
+
+                        <li><a routerLink="/hakkımızda">HAKKIMIZDA</a></li>
+                        <li><a routerLink="/galeri">GALERİ</a></li>
+                        <ng-template ngFor let-form [ngForOf]="form" let-i="index">
+                            <li *ngIf="form.isActive ==true"><a routerLink="/form">FORM</a></li>
+                        </ng-template>
+                        <li><a routerLink="/blogs">BLOG</a></li>
+
+                        <ng-template ngFor let-menu [ngForOf]="mainMenu | orderby:'order'" let-i="index">
+
+                            <li *ngIf="menu.subMenu==false && menu.isActive == true"><a
+                                    routerLink="/menuDetail/{{menu.id}}">{{menu.menuName}}</a></li>
+
+                            <li *ngIf="menu.subMenu==true && menu.isActive == true"><a>{{menu.menuName}}</a>
+                                <ul>
+                                    <ng-template ngFor let-subMenu [ngForOf]="menus | orderby:'order'" let-i="index">
+
+                                        <li
+                                            *ngIf="menu.id==subMenu.mainMenuId && subMenu.subMenu==false && subMenu.isActive==true">
+                                            <a routerLink="/menuDetail/{{subMenu.id}}">{{subMenu.menuName}}</a>
+                                        </li>
+
+                                        <li
+                                            *ngIf="menu.id==subMenu.mainMenuId && subMenu.subMenu==true && subMenu.isActive ==true">
+                                            <a>{{subMenu.menuName}}</a>
+                                            <ul>
+                                                <ng-template ngFor let-subMenu2 [ngForOf]="menus | orderby:'order'"
+                                                    let-i="index">
+                                                    <li
+                                                        *ngIf="subMenu.id==subMenu2.mainMenuId && subMenu2.isActive ==true">
+                                                        <a
+                                                            routerLink="/menuDetail/{{subMenu2.id}}">{{subMenu2.menuName}}</a>
+                                                    </li>
+                                                </ng-template>
+                                            </ul>
+                                        </li>
+                                    </ng-template>
+                                </ul>
+                            </li>
+
+                        </ng-template>
+
+                        <li><a routerLink="/iletişim">İLETİŞİM</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-auto pr-lg-0">
+                <div class="header-searchbar">
+                    <!-- <a href="#search-header" class="header-search-form"><i class="fas fa-search search-button"></i></a>
+                    <form id="search-header" method="post" action="http://www.toFlabs.com/" name="search-header"
+                        class="mfp-hide search-form-result">
+                        <div class="search-form position-relative">
+                            <button type="submit" class="fas fa-search close-search search-button"></button>
+                            <input type="text" name="search" class="search-input" placeholder="Arama yapın..."
+                                autocomplete="off">
+                        </div>
+                    </form> -->
+
+                    <a href="#search-header" class="header-search-form"><i class="fas fa-search search-button"></i></a>
+                    <form id="search-header" method="post" name="search-header"
+                        class="mfp-hide search-form-result">
+                        <div class="search-form position-relative">
+                            <ng-template ngFor let-menu [ngForOf]="menus | filter:searchText" let-i="index">
+                                <a routerLink="/menuDetail/{{menu.id}}" type="submit" class="fas fa-search close-search search-button"></a>
+                            </ng-template>                           
+                            <input class="search-input" type="text" name="search" [(ngModel)]="searchText" autocomplete="off"
+                            placeholder="Arama yapın...">
+                        </div>
+                        
+                            <ul *ngFor="let menu of menus | filter:searchText">
+                              <li *ngIf="searchText"><a routerLink="/menuDetail/{{menu.id}}">{{menu.menuName}}</a></li>
+                            </ul>
+                            <ul *ngFor="let item of promotion | filter:searchText">
+                                <li *ngIf="searchText"><a routerLink="/promotiondetail/{{item.id}}">{{item.promotionTitle}}</a></li>
+                              </ul>
+                              <ul *ngFor="let item of blogs | filter:searchText">
+                                <li *ngIf="searchText"><a routerLink="/blogDetail/{{item.id}}">{{item.title}}</a></li>
+                              </ul>
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- end navigation -->
+    <!-- end navigation -->
+</header>
+<!-- end header -->
